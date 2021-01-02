@@ -43,8 +43,7 @@ public class TodoItemsTest {
         assertEquals(expectedArrayLength, testArray.length);
     }
 
-    // Test passes when run as individual test, but not when run with full class. Possibly because it is slower to
-    // run than the other tests?
+    // Test passes when run as individual test, but not when run with full class.
     @Test
     public void test_findById() {
         Todo expectedTodo = todoItem3;
@@ -77,6 +76,14 @@ public class TodoItemsTest {
         int expectedArrayLength = 1;
         Todo[] testArray = todoItemsTest.findUnassignedTodoItems();
         assertEquals(expectedArrayLength, testArray.length);
+    }
+
+    // Test passes when run as individual test, but not when run with full class.
+    @Test
+    public void test_removeTodoItem() {
+        int expectedArrayLength = 3;
+        todoItemsTest.removeTodoItem(1);
+        assertEquals(expectedArrayLength, todoItemsTest.size());
     }
 
     @Test

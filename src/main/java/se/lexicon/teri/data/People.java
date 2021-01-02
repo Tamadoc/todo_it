@@ -11,11 +11,11 @@ public class People {
         return personArray.length;
     }
 
-    public Person[] findAll(){
+    public Person[] findAll() {
         return personArray;
     }
 
-    public Person findById(int personId){
+    public Person findById(int personId) {
 
         for (Person person : personArray) {
             if (person.getPersonId() == personId) {
@@ -26,7 +26,7 @@ public class People {
         return null;
     }
 
-    public Person addPerson(String firstName, String lastName){
+    public Person addPerson(String firstName, String lastName) {
         personArray = Arrays.copyOf(personArray, personArray.length + 1);
         Person newPerson = new Person(firstName, lastName);
 
@@ -34,7 +34,21 @@ public class People {
         return newPerson;
     }
 
-    public void clear(){
+    public void removePerson(int personId) {
+        Person personToRemove = findById(personId);
+        Person[] returnArray = new Person[0];
+
+        for (Person person : personArray) {
+            if (person == personToRemove) {
+                continue;
+            }
+            returnArray = Arrays.copyOf(returnArray, returnArray.length + 1);
+            returnArray[returnArray.length - 1] = person;
+        }
+        personArray = returnArray;
+    }
+
+    public void clear() {
         personArray = new Person[0];
     }
 }

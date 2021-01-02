@@ -91,6 +91,20 @@ public class TodoItems {
         return newTodo;
     }
 
+    public void removeTodoItem(int todoId) {
+        Todo itemToRemove = findById(todoId);
+        returnArray = new Todo[0];
+
+        for (Todo todo : todoArray) {
+            if (todo == itemToRemove) {
+                continue;
+            }
+            returnArray = expandArray(returnArray);
+            returnArray[returnArray.length - 1] = todo;
+        }
+        todoArray = returnArray;
+    }
+
     public void clear() {
         todoArray = new Todo[0];
     }
