@@ -12,7 +12,7 @@ public class Todo {
         this.todoId = TodoSequencer.nextTodoId();
     }
 
-    Todo(String description, boolean done, Person assignee) {
+    public Todo(String description, boolean done, Person assignee) {
         this();
         this.description = description;
         this.done = done;
