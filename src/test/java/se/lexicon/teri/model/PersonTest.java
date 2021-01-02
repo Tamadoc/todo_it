@@ -3,6 +3,7 @@ package se.lexicon.teri.model;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import se.lexicon.teri.data.PersonSequencer;
 
 public class PersonTest {
 
@@ -10,7 +11,8 @@ public class PersonTest {
 
     @Before
     public void setUp() {
-        testPerson = new Person(1, "", "");
+        PersonSequencer.resetPersonId();
+        testPerson = new Person("firstName", "lastName");
     }
 
     @Test

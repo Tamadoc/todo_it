@@ -1,12 +1,18 @@
 package se.lexicon.teri.model;
 
+import se.lexicon.teri.data.PersonSequencer;
+
 public class Person {
     final int personId;
     String firstName;
     String lastName;
 
-    Person(int personId, String firstname, String lastName){
-        this.personId = personId;
+    Person() {
+        personId = PersonSequencer.nextPersonId();
+    }
+
+    Person(String firstname, String lastName) {
+        this();
         this.firstName = firstname;
         this.lastName = lastName;
     }
