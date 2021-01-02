@@ -1,13 +1,19 @@
 package se.lexicon.teri.model;
 
+import se.lexicon.teri.data.TodoSequencer;
+
 public class Todo {
     final int todoId;
     String description;
     boolean done;
     Person assignee;
 
-    Todo(int todoId, String description, boolean done, Person assignee){
-        this.todoId = todoId;
+    Todo() {
+        this.todoId = TodoSequencer.nextTodoId();
+    }
+
+    Todo(String description, boolean done, Person assignee) {
+        this();
         this.description = description;
         this.done = done;
         this.assignee = assignee;

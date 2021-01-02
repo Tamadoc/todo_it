@@ -3,16 +3,18 @@ package se.lexicon.teri.model;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import se.lexicon.teri.data.TodoSequencer;
 
 
 public class TodoTest {
 
     private Todo testTodo;
-    private Person testPerson;
+    private Person testPerson = new Person();
 
     @Before
     public void setUp() {
-        testTodo = new Todo(1, "", false, null);
+        TodoSequencer.resetTodoId();
+        testTodo = new Todo("", false, null);
     }
 
     @Test
