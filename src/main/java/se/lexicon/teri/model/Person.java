@@ -11,7 +11,7 @@ public class Person {
         personId = PersonSequencer.nextPersonId();
     }
 
-    Person(String firstname, String lastName) {
+    public Person(String firstname, String lastName) {
         this();
         this.firstName = firstname;
         this.lastName = lastName;
